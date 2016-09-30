@@ -1,0 +1,28 @@
+1.	Given two strings, base and remove, return a version of the base string where all instances of the remove string have been removed (not case sensitive). You may assume that the remove string is length 1 or more. Remove only non-overlapping instances, so with "zzz" removing "zz" leaves "z".
+	withoutString("Hello there", "llo") ? "He there"
+	withoutString("Hello there", "e") ? "Hllo thr"	
+	withoutString("Hello there", "x") ? "Hello there"
+
+
+Source code:
+
+public String withoutString(String base, String remove) {
+   final int removel = remove.length();
+   final int basel = base.length();
+   String op      = "";
+
+   for(int i = 0; i < bLen;)
+   {
+        if( !(i + removel > basel) && base.substring(i, i + removel).equalsIgnoreCase(remove) )
+        {
+            i += removel;
+            continue;
+        }
+        op += base.substring(i, i + 1);
+        i++;
+   }
+
+   return op;   
+
+}
+
